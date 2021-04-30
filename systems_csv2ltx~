@@ -1,0 +1,69 @@
+#! /usr/bin/python
+
+import csv
+import sys
+
+metrics = {} # list of metrics in the order they will appear in the data below, for each category
+data = {} # systems are attributes. values are array of assessment values
+
+# first file is template - all others are systems.
+with open(sys.argv[1], "r") as f:
+    reader = csv.reader(f)
+    rn = 0
+    prefix1 = ""
+    prefix2 = ""
+    category = ""
+    type = ""
+    nip = 0
+    for row in reader:
+        if rn >= 5:
+            if row[0] != '':
+                prefix1 = row[0].capitalize()[0]
+                category = row[0]
+                metrics[category] = []
+            if row[1] != '':
+                prefix2 = ''
+                rs = row[1].split()
+                type = row[1]
+                c = 0
+                for w in rs:
+                    prefix2 += w.capitalize()[0]
+                    c += 1
+                    if c == 2:
+                        break
+                nip = 0
+            nip += 1
+            metrics[category].append(prefix1+prefix2+str(nip))
+        rn += 1
+
+for i in range(2, len(sys.argv)):
+    with open(sys.argv[i], "r") as f:
+        reader = csv.reader(f)
+        nr = 0
+        system = ""
+        for row in reader:
+            if nr == 0:
+                system = row[1]
+                data[system] = []
+            if nr >= 5:
+                data[system].append(row[5])
+            nr += 1        
+
+count = 0
+for cat in ['Findability ', 'Accessibility', 'Interoperability', 'Reusability', 'Engagement', 'Social connections', 'Trust']:
+    st = "== "+cat+" ==\n\n\\begin{tabular}{|m{2.1cm}|"
+    for i in range(0, len(metrics[cat])):
+        st += "m{0.8cm}|"
+    st+= "} \hline \n"
+    for m in metrics[cat]:
+        st+=" & \\textbf{"+m+"} "
+    st+= " \\\\ \hline "
+    for s in data:
+        st += "\\textbf{"+s+"} "
+        for i in range(0,len(metrics[cat])):
+            st += " &"+data[s][count+i].replace("%", "\%")
+        st+= " \\\\ \hline \n"
+    count += len(metrics[cat])
+    st+= " \\end{tabular}\n\n"
+    print(st)
+            

@@ -1,0 +1,37 @@
+#! /usr/bin/python
+
+import csv
+import sys
+
+print("\\begin{tabular}{|m{0.75cm}|m{0.75cm}|m{10cm}|m{5cm}|}")
+print("\\line\\textbf{Metric}&\\textbf{Value}&\\textbf{Comment}&\\textbf{Source}\\\\ \\hline")
+
+with open(sys.argv[1], "r") as f:
+    reader = csv.reader(f)
+    rn = 0
+    prefix1 = ""
+    prefix2 = ""
+    category = ""
+    type = ""
+    nip = 0
+    for row in reader:
+        if rn >= 5:
+            if row[0] != '':
+                prefix1 = row[0].capitalize()[0]
+                category = row[0]
+            if row[1] != '':
+                prefix2 = ''
+                rs = row[1].split()
+                type = row[1]
+                c = 0
+                for w in rs:
+                    prefix2 += w.capitalize()[0]
+                    c += 1
+                    if c == 2:
+                        break
+                nip = 0
+            nip += 1
+            print("\\textbf{"+prefix1+prefix2+str(nip)+"}&"+row[5].replace("%","\%")+"&"+row[6].replace("%", "\%")+"&\url{"+row[7]+"}\\\\ \\hline")        
+        rn += 1
+
+print("\\end{tabular}")
