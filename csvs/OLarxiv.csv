@@ -1,8 +1,7 @@
-System name:,arXiv,,Who contacts:,Mathieu,,,
-Link:,https://arxiv.org/,,status:,"replied with question, replied and chased again",,,
-Person to Contact:,"Martin Lessmeister (IT Lead)
-mhl10@cornell.edu",,,,,,
-Comment:,https://arxiv.org/about/people/leadership_team,,,,,,
+System name:,arXiv,,,,,,
+Link:,https://arxiv.org/,,,,,,
+,,,,,,,
+,,,,,,,
 Category,sub-category,Metric,possible values,assessment method,assessment,justification,source
 Findability ,Content support,Automatically assigns persistent identifiers,y/n,A sytem is assessed yes (y) if it automatically assigns a persistant identifier to a research artefact,y,generates and adds an arxiv identifier,https://arxiv.org/help/arxiv_identifier
 ,,Can generate DOI,y/n,"A system is assessed yes (y) if, in addition to a possible unique identifier local to the system, also supports the generation of a DOI for a research artefact",n,only arxiv identifier,
@@ -14,24 +13,24 @@ Findability ,Content support,Automatically assigns persistent identifiers,y/n,A 
 https://arxiv.org/search/advanced"
 Accessibility,Content language,Language support,y/n,A system is assessed as providing language support (y) if its interface is available in more than one language,n,website is only in English available,
 ,,Protocols and APIs supported,y/n,A system is assessed as providing protocols and APIs (y) if it makes available at least one protocol and/or API for access to research artefacts.,y,"OAI-PMH, arxiv API (XML), RSS are in use",https://arxiv.org/help/bulk_data
-,Content availability,Long term preservation,y/n,A system is assesssed yes (y) if it offers a convenient mechanism to perform a long term preservation beyond a simple database backup.,?,no informations found,
-,,Availability,"high, medium, low","A system is assed high if the uptime is >= 99,9%, it is assessed medium if the uptime is between 99,9% and 99% and low if it is below 99% ",high,minimal down time,https://arxiv.org/stats/today
-,,Access control,"open, close, on-request","A system is assessed open, if it makes research artefacts public by default. It is assessed as close if it is primary designed for closed repositories. It is assessed on-request if it offers an on-request feature.",open,uploaded data is alway open,
+,Content availability,Long term preservation,y/n,A system is assesssed yes (y) if it offers a convenient mechanism to perform a long term preservation beyond a simple database backup.,n,no informations found,
+,,Availability,h/m/l,"A system is assed high if the uptime is >= 99,9%, it is assessed medium if the uptime is between 99,9% and 99% and low if it is below 99% ",h,minimal down time,https://arxiv.org/stats/today
+,,Access control,"open, closed, on-request","A system is assessed open, if it makes research artefacts public by default. It is assessed as close if it is primary designed for closed repositories. It is assessed on-request if it offers an on-request feature.",open,uploaded data is alway open,
 Interoperability,Content,Standard format for metadata,y/n,A system is assessed yes (y) if it employs a standardized and established format for providing the metadata,n,using custom metadata fields,
 ,,Standard formats for content,y/n,A system is assessed yes (y) if it supports the provision of data in common and standard file formats,y,"(La)TeX, PDF, HTML are possible",https://arxiv.org/help/submit
 ,,Persistent identifiers,y/n,A system is assessed yes (y) if it assigns a persistent identifier (e.g. a stable URL) to the research artifacts.,y,"arXiv ID will be added, sometimes on a document itself by a watermark",
 ,,Custom metadata,y/n,"A system is assessed yes (y) if it allows to customize, extend and limit the metadata schema/format.",n,no further metadata to add,
 ,,Linking of metadata and content,y/n,A system is assessed yes (y) if it supports the creation and publication of semantic links between different metadata and/or datasets. ,n,upload process allow not such links between artefacts,
-,Content interaction,Import and upload of metadata and content,y/p/n,"A system is assessed yes (y) if it supports the import and upload of metadata and data via multiple means, e.g. a web frontend or a standard API. It is assessed partially (p) if it only supports the provision via a web interface.",n,users have to fill out a form,
+,Content interaction,Import and upload of metadata and content,y/p/n,"A system is assessed yes (y) if it supports the import and upload of metadata and data via multiple means, e.g. a web frontend or a standard API. It is assessed partially (p) if it only supports the provision via a web interface.",y,https://arxiv.org/help/submit_sword,
 ,,Export and download of metadata and content,y/p/n,"A system is assessed yes (y) if it supports the export and download of metadata and data via multiple means, e.g. a web frontend or a standard API. It is assessed partially (p) if it only supports the download via a web interface.",y,"3 main formats are supported: Bibtex, PDF, PS",
 ,,Custom submission process,y/n,"A system is assessed yes (y) it it supports the creation and maintenance of a individuall submission process, including fine-grain access control and role assignment.",n,standardized submission process,
 ,,Data federation ,y/n,A system is assessed yes (y) if it provides a built-in mechanism to make the metadata and data in other repositories (running the same system) available. ,n,no automatic process here available,
 Reusability,Content depositing,Licence support,y/l/n,"A system is assessed high (h) if it provides a highly usable and easy-to-understand mechanism to select a fitting licence for an artefact. It is assessed limited (l), if it at least provides a customizable controlled list of licences",l,provide Creative Common licenses and one arxiv license,https://arxiv.org/help/policies/submission_agreement
 ,Content access,Licence support,y/l/n,"A system is assessed high (h) if it provides an easy-to-understand and human-readable description of the terms of use. It is assessed limited (l), if it at least provides a link to the applied licence",l,only links to Creative Commons website for further descriptions,https://arxiv.org/help/policies/submission_agreement
 ,Content support,Data,y/n,"A system is assessed as possessing the feature (y) if it allows to access the actual content in a structured and machine-readable manner, if the data format supports it. E.g. access the content of a CSV file via an API",n,"there is a S3 bucket on AWS with all artifacts about 270 GB, but for using this the user have to pay Amazon",https://arxiv.org/help/bulk_data_s3
-Engagement,Useability and ease of use,Support and documentation,h/m/l,A system is assessed high (h) if the documentation and support are of high quality and reachability,m,there is a FAQ and help section which contains the important topics for providing and finding data,https://arxiv.org/help
+Engagement,Usability and ease of use,Support and documentation,h/m/l,A system is assessed high (h) if the documentation and support are of high quality and reachability,m,there is a FAQ and help section which contains the important topics for providing and finding data,https://arxiv.org/help
 ,,Usability,h/m/l,A system is assessed according to this metrics based on usability testing carried out.,l,Looks like a website from the '90,
-,Supporting engagement,Push notifications,y/n,"A system is assessed as possessing the feature (y) if it includes mechanisms to notify users through mobile apps, email, or other mechanisms.",n,maybe with an external RSS application,
+,Engagement support,Push notifications,y/n,"A system is assessed as possessing the feature (y) if it includes mechanisms to notify users through mobile apps, email, or other mechanisms.",n,maybe with an external RSS application,
 ,,Publication workflow support,y/n,A system is assessed as possessing the feature (y) if it provide a way to customise and manage the publication/deposit workflow.,n,no customization about the submission process available,
 ,,Visualisation tools,y/n,"A system is assessed as possessing the feature (y) if it includes ways to visualise the content of publications or datasets, at least for some formats.",n,no visualization tools available,
 ,,Analysis tools,y/n,"A system is assessed as possessing the feature (y) if it includes mechanisms to analyse the data in deposited research artefacts, including basic statistical analysis or more advanced methods. ",n,no analysis tools available,
@@ -43,14 +42,14 @@ Social connections,Reflecting the social context,Theming / branding,y/n,A system
 ,,Sharing,y/n,"A system is assessed as possessing the feature (y) if it provides ways to share research artefacts with other users, on the system or other platforms (e.g. social media). ",y,"users can share artefacts over popular bookmarking platforms (Redit, ScienceWISE, Mendelay, BibSonomy)",
 ,,Following,y/n,"A system is assessed as possessing the feature (y) if it enables users to follow, and receive updates from, other users, research artefacts, collections, institutions, etc.",n,no social features included,
 ,,Discussion forums,y/n,A system is assessed as possessing the feature (y) if it includes discussion forums for users and/or for communication with/from the administrators.,n,no social features included,
-,,Development community,c/l/m/h,"For a propriatery, closed system, the assessement should be ""closed"" (c). For an open system, assessement is based on amount of activities in the development community (daily/weekly updates: high, monthly/quaterly updates: medium, less: low)",c,team by Cornell University,https://arxiv.org/about/people/staff
+,,Development community,h/m/l/c,"For a propriatery, closed system, the assessement should be ""closed"" (c). For an open system, assessement is based on amount of activities in the development community (daily/weekly updates: high, monthly/quaterly updates: medium, less: low)",c,team by Cornell University,https://arxiv.org/about/people/staff
 Trust,Content,Authentication,y/n,A system is assessed as possessing the feature (y) if it includes an authentication mechanism for users.,y,general username / password login mechanism,https://arxiv.org/help/passwords
 ,,Gate keeping,y/n,A system is assessed as possessing the feature (y) if it provides a review functionality during submission by data stewards or other permitted organizational users. ,n,not available,
 ,,Review feature,y/n,A system is assessed as possessing the feature (y) if it includes a functionality for writing reviews to specific datasets. ,n,not available,
 ,Content support,Indicator,n/s/a,A system is assessed as possessing the feature (s) if it records usage statistics and (a) if it provides advanced research indicators like h-Index or AltMetrics.,n,no statistics or indicators are available,
 ,,Long term preservation,date,It describes the date of the oldest available dataset.,1991,same year as the start of the repository,
-,System,Open Source software and libraries,y/n,A system is assessed as possessing the feature (y) if it the underlying system is open source. ,?,no informations available,
-,,Uptake,h/m/l,A system is assessed by the number of active users per month.,ca. 15.500 submissions / month,13.000 - 18.000 Submission per month,https://arxiv.org/stats/today 
+,System,Open Source software and libraries,y/n,A system is assessed as possessing the feature (y) if it the underlying system is open source. ,-,no informations available,
+,,Uptake,h/m/l,A system is assessed by the number of active users per month.,h,13.000 - 18.000 Submission per month,https://arxiv.org/stats/today 
 ,GDPR,System backup,y/n,A system is assessed as possessing the feature (y) if it includes automated backups in a constant time interval.,n,no informations available,
 ,,Right of information,y/n,A system is assessed as possessing the feature (y) if it provides a function to get all data about one user. ,n,this function is not available,
 ,,Data deletion,y/n,A system is assessed as possessing the feature (y) if it provides a function to delete all data about one user. ,n,this function is not available,

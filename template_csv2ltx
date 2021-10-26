@@ -21,7 +21,7 @@ with open(sys.argv[1], "r") as f:
                 print("\\end{tabular}\n\n")
                 print("%%"+category)
                 print("\\begin{tabular}{|m{2.5cm}|m{3cm}|m{1cm}|m{1cm}|p{8cm}|}")
-                print("\\hline \\textbf{Type}&\\textbf{Metric}&\\textbf{ID}&\\textbf{Values}&\\textbf{Descritpion}\\\\ \\hline")
+                print("\\hline \\textbf{Type}&\\textbf{Metric}&\\textbf{ID}&\\textbf{Values}&\\textbf{Description}\\\\ \\hline")
             if row[1] != '':
                 prefix2 = ''
                 rs = row[1].split()
@@ -34,7 +34,7 @@ with open(sys.argv[1], "r") as f:
                         break
                 nip = 0
             nip += 1
-            print("\\textbf{"+row[1]+"}&"+row[2]+"&"+prefix1+prefix2+str(nip)+"&"+row[3]+"&"+row[4].replace("%", "\%")+"\\\\ \\hline")        
+            print("\\textbf{"+row[1]+"}&"+row[2]+"&"+prefix1+prefix2+str(nip)+"&"+row[3]+"&"+row[4].replace("%", "\%").replace(">=", "$\geq$")+"\\\\ \\hline")        
         rn += 1
 
 print("\\end{tabular}")
